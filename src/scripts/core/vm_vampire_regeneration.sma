@@ -16,6 +16,15 @@ public plugin_init() {
     register_plugin("[VM] Vampire regeneration", VM_VERSION, "JustGo")
 
     RegisterHamPlayer(Ham_Player_PostThink, "HHook_Player_PostThink_Post", .Post = 1);
+    RegisterHamPlayer(Ham_Spawn, "HHook_Player_Spawn_Post", .Post = 1);
+}
+
+public HHook_Player_Spawn_Post(pPlayer) {
+    if (!is_user_alive(pPlayer)) return HAM_IGNORED
+
+    g_bRegenerating[pPlayer] = false
+
+    return HAM_IGNORED
 }
 
 public HHook_Player_PostThink_Post(pPlayer) {

@@ -13,7 +13,7 @@
 #define MODEL_LYCAN "models/vampire/v02/lycan.mdl"
 #define MODEL_LYCAN_HANDS "models/vampire/v02/lycan_hands.mdl"
 
-#define SOUND_PREPARE ""
+#define SOUND_PREPARE "sound/vampire/v02/vampire_prepare.mp3"
 
 #define SOUND_BOOST_ACTIVATE ""
 

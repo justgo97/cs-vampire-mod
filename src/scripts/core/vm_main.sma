@@ -27,6 +27,8 @@ public plugin_precache() {
 	precache_model(MODEL_VAMPIRE_NORMAL)
 	precache_model(MODEL_VAMPIRE_HANDS_HOST)
 	precache_model(MODEL_VAMPIRE_HANDS_NORMAL)
+
+	precache_generic(SOUND_PREPARE)
 }
 
 public plugin_init() {
@@ -134,6 +136,8 @@ public RHook_OnRoundFreezeEnd_Post() {
 
 	set_dhudmessage(255, 0, 0, _, _, _, _, 5.0)
 	show_dhudmessage(0, "Be aware! Vampires will appear in 10 seconds")
+
+	client_cmd(0, "mp3 play %s", SOUND_PREPARE);
 }
 
 public VM_ChooseHost() {

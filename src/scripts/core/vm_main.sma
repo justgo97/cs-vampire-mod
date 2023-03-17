@@ -194,15 +194,10 @@ public RHook_CheckWinConditions() {
 
 	if (g_bGameShouldCommence) {
 		rg_round_end(3.0, WINSTATUS_DRAW, ROUND_GAME_COMMENCE, "")
-		return HC_SUPERCEDE;
-	}
-
-	if (g_iVampiresCount <= 0) {
+	} else if (g_iVampiresCount <= 0) {
 		rg_round_end(5.0, WINSTATUS_CTS, ROUND_CTS_WIN, "Hunters Win")
-		return HC_SUPERCEDE;
 	} else if (GetHuntersCount() <= 0) {
 		rg_round_end(5.0, WINSTATUS_TERRORISTS, ROUND_TERRORISTS_WIN, "Vampires Win")
-		return HC_SUPERCEDE;
 	}
 
 	return HC_SUPERCEDE;
